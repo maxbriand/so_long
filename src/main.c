@@ -1,34 +1,28 @@
-#include <stdio.h>
+#include "so_long.h"
 
-
-
-typedef struct s_params
+void	ft_exit_error_message(char *message)
 {
-	int mlx_ptr;
-	int win_ptr;
-} hey;
-
-void test(void *ok)
-{
-	// hey *coool;
-
-	// coool = ok;
-	
-	printf("%d", ((hey *)ok)->mlx_ptr);
+	write(2, "Error\n", 6);
+	while (*message)
+	{
+		write(2, &(*message), 1);
+		message++;
+	}
+	write(2, "\n", 1);
+	exit(EXIT_FAILURE);
 }
 
-
-int	main(void)
+int	main(int ac, char **av)
 {
-	hey doub_voiddd;
-	int ok1;
-	int ok2;
+	char	*map;
 	
-	ok1 = 1222;
-	ok2 = 2444;
-	doub_voiddd.mlx_ptr = ok1;
-	doub_voiddd.win_ptr = ok2;
-
-	test(&doub_voiddd);
+	ac -= 1;
+	av = av + 1;
+	if (ac <= 0)
+		ft_exit_error_message("Too few arguments");
+	if (ac > 1)
+		ft_exit_error_message("Too many arguments");
+	map = *av;
+	ft_validation(map);
 	return (0);
 }
