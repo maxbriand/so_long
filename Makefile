@@ -9,10 +9,12 @@ VALIDATION = src/validation/
 
 
 SRC = 	src/main.c \
-			\
-			$(VALIDATION)ft_validation.c \
-			$(VALIDATION)ft_validation_map_extension.c \
-			$(VALIDATION)ft_validation_map_components.c \
+		\
+		$(VALIDATION)ft_validation.c \
+		$(VALIDATION)ft_validation_map_extension.c \
+		$(VALIDATION)ft_validation_map_components.c \
+		$(VALIDATION)ft_invalid_map_exit.c \
+
 
 OBJ = $(patsubst %.c, %.o, $(SRC))
 
