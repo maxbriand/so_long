@@ -31,8 +31,9 @@ void	ft_exit_error_message(char *message);
 // map / input validation
 void	ft_validation(char *map);
 void	ft_validation_map_extension(char *map);
-void	ft_validation_map_components(char *map);
-void 	ft_invalid_map_exit(int fd, char *buffer);
+char	*ft_validation_map_components(char *map);
+void	ft_validation_rectangular(char *full_text);
+void 	ft_invalid_map_exit(int fd, char *buffer, char *full_text, int code);
 
 
 #endif
