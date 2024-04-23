@@ -2,8 +2,9 @@
 #include <unistd.h>
 #include "libft.h"
 #include <fcntl.h>
-# include <stdlib.h>
-# include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "so_long.h"
 
 
 typedef struct 	s_params
@@ -138,21 +139,63 @@ int	expose_hook(void *params)
 	return (0);
 }*/
 
+// int	main(void)
+// {
+	
+// 	int fd;
+// 	char *str;
+// 	fd = open("textures/ok_medium_map.ber", O_RDWR);
+// 	while (1)
+// 	{
+// 		str = get_next_line(fd);
+// 		if (str == NULL)
+// 			break;
+// 		printf("%s", str);
+// 		printf("\n");
+// 	}
+// 	free(str);
+// 	return (0);
+// }
+
+
+
+void	test(void)
+{
+
+
+
+}
+
 int	main(void)
 {
+	t_tile *zeroXzero;
+
+	zeroXzero = malloc(sizeof(t_tile));
+	zeroXzero->x = 15;
+	zeroXzero->y = 15;
+	zeroXzero->character = 'E';
+	zeroXzero->visited = 1;
+
+	t_tile *oneXzero;
+
+	oneXzero = malloc(sizeof(t_tile));
+	oneXzero->x = 1;
+	oneXzero->y = 15;
+	oneXzero->character = 'D';
+	oneXzero->visited = 0;
+
+
+	t_queue *node;
+	node = malloc(sizeof(t_queue));
 	
-	int fd;
-	char *str;
-	fd = open("textures/ok_medium_map.ber", O_RDWR);
-	while (1)
-	{
-		str = get_next_line(fd);
-		if (str == NULL)
-			break;
-		printf("%s", str);
-		printf("\n");
-	}
-	free(str);
-	return (0);
+	t_queue *node_2;
+	node_2 = malloc(sizeof(t_queue));
+
+	node->tile = zeroXzero;
+	node->next = node_2;
+	node_2->tile = oneXzero;
+
+	ft_printf("%d", node->next->tile->y);
+	return(0);
 }
 

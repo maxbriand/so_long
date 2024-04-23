@@ -1,19 +1,23 @@
 NAME = so_long
 CC = cc
-FLAGS = -Wall -Werror -Wextra
+#FLAGS = -Wall -Werror -Wextra
 SRC_DIR = ./src
 LIBFT = libft/libft.a
 MLX = -lmlx -lX11 -lXext
 
-VALIDATION = src/validation/
+IV = src/iv/
 
 SRC = 	src/main.c \
 		\
-		$(VALIDATION)ft_validation.c \
-		$(VALIDATION)ft_validation_map_extension.c \
-		$(VALIDATION)ft_validation_map_components.c \
-		$(VALIDATION)ft_validation_rectangular.c \
-		$(VALIDATION)ft_invalid_map_exit.c \
+		$(IV)ft_iv.c \
+		$(IV)ft_iv_map_extension.c \
+		$(IV)ft_iv_map_components.c \
+		$(IV)ft_iv_map_rectangular.c \
+		$(IV)ft_iv_map_closed.c \
+		$(IV)ft_invalid_map_exit.c \
+		$(IV)ft_iv_map_path.c \
+		$(IV)ft_ll_tile_utils.c \
+		$(IV)ft_ll_queue_utils.c \
 
 OBJ = $(patsubst %.c, %.o, $(SRC))
 

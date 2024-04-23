@@ -1,5 +1,17 @@
 #include "so_long.h"
 
+void	ft_free_map_tile(t_tile *map)
+{
+	t_tile	*save_tile;
+
+	while (map)
+	{
+		save_tile = map;
+		map = map->next;
+		free(save_tile);
+	}
+}
+
 void	ft_exit_error_message(char *message)
 {
 	write(2, "Error\n", 6);
@@ -23,6 +35,6 @@ int	main(int ac, char **av)
 	if (ac > 1)
 		ft_exit_error_message("Too many arguments");
 	map = *av;
-	ft_validation(map);
+	ft_iv(map);
 	return (0);
 }
