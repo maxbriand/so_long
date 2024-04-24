@@ -118,84 +118,30 @@ int	expose_hook(void *params)
 	return (0);
 }
 
-/*int	main(void)
-{
-	t_params params;
-	params.mlx_ptr = mlx_init();
-	// int color = 0xFF0000;
-	// int width = 200;
-	// int height = 200;
-	int x = 400;
-	int y = 400;
-	params.x = &x;
-	params.y = &y;
-
-	params.win_ptr = mlx_new_window(params.mlx_ptr, 1000, 1000, "Hello blue");
-	mlx_key_hook(params.win_ptr, key_hook_white, &params);		
-	//mlx_expose_hook (params.win_ptr, expose_hook, &params);
-	// mlx_mouse_hook (params.win_ptr, mouse_hook, params);
-	int infit = mlx_loop(params.mlx_ptr);
-	ft_printf("the result of mlx loop is %d", infit);
-	return (0);
-}*/
-
-// int	main(void)
-// {
-	
-// 	int fd;
-// 	char *str;
-// 	fd = open("textures/ok_medium_map.ber", O_RDWR);
-// 	while (1)
-// 	{
-// 		str = get_next_line(fd);
-// 		if (str == NULL)
-// 			break;
-// 		printf("%s", str);
-// 		printf("\n");
-// 	}
-// 	free(str);
-// 	return (0);
-// }
-
-
-
-void	test(void)
-{
-
-
-
-}
-
 int	main(void)
 {
-	t_tile *zeroXzero;
+	t_params p_params;
+	t_params *params;
 
-	zeroXzero = malloc(sizeof(t_tile));
-	zeroXzero->x = 15;
-	zeroXzero->y = 15;
-	zeroXzero->character = 'E';
-	zeroXzero->visited = 1;
+	params = &p_params;
+	params->mlx_ptr = mlx_init();
+	int x = 400;
+	int y = 400;
+	params->x = &x;
+	params->y = &y;
 
-	t_tile *oneXzero;
-
-	oneXzero = malloc(sizeof(t_tile));
-	oneXzero->x = 1;
-	oneXzero->y = 15;
-	oneXzero->character = 'D';
-	oneXzero->visited = 0;
-
-
-	t_queue *node;
-	node = malloc(sizeof(t_queue));
+	params->win_ptr = mlx_new_window(params->mlx_ptr, 1000, 1000, "Hello blue");
 	
-	t_queue *node_2;
-	node_2 = malloc(sizeof(t_queue));
+	int wiiiith = 30;
+	int heighhhtt = 30;
+	void *img_ptr;
+	img_ptr = mlx_xpm_file_to_image(params->mlx_ptr, "./textures/ground2_white.xpm", &wiiiith, &heighhhtt);	
+	mlx_put_image_to_window(params->mlx_ptr, params->win_ptr, img_ptr, 0, 0);
 
-	node->tile = zeroXzero;
-	node->next = node_2;
-	node_2->tile = oneXzero;
-
-	ft_printf("%d", node->next->tile->y);
-	return(0);
+	mlx_key_hook(params->win_ptr, key_hook_white, &params);		
+	mlx_loop(params->mlx_ptr);
+	return (0);
 }
 
+	//mlx_expose_hook (params.win_ptr, expose_hook, &params);
+	// mlx_mouse_hook (params.win_ptr, mouse_hook, params);

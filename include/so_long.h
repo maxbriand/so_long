@@ -36,6 +36,14 @@ typedef struct	s_queue
 	struct s_queue	*next;
 } t_queue;
 
+typedef struct	s_window
+{
+	void	*mlx_ptr;
+	void	*win_ptr;
+	int		size_x;
+	int		size_y;
+} t_window;
+
 #include "libft.h"
 #include "mlx.h"
 #include <fcntl.h>
@@ -45,7 +53,7 @@ void	ft_exit_error_message(char *message);
 void	ft_free_map_tile(t_tile *map);
 
 // input validation - map
-void	ft_iv(char *map);
+t_tile	*ft_iv(char *path);
 void	ft_iv_map_extension(char *map);
 void	ft_iv_map_components(char *full_text);
 void	ft_iv_map_rectangular(char *full_text);
@@ -58,5 +66,9 @@ t_queue	*ft_create_queue(t_tile *tile);
 void	ft_push_back_queue(t_queue **begin_list, void *data);
 t_tile	*ft_find_tile(t_tile *tile, int x, int y);
 t_tile	*ft_find_starting_p(t_tile *tile);
+
+// open map
+void	ft_open_map(t_tile *map);
+
 
 #endif

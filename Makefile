@@ -8,6 +8,7 @@ MLX = -lmlx -lX11 -lXext
 IV = src/iv/
 
 SRC = 	src/main.c \
+		src/ft_open_map.c \
 		\
 		$(IV)ft_iv.c \
 		$(IV)ft_iv_map_extension.c \

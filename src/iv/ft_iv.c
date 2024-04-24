@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 23:02:13 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/23 23:42:19 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/24 14:48:46 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,19 +77,20 @@ t_tile	*ft_convert_str_to_ll(char *full_text)
 
 // if I nead to get the map outside of this function, add a t_tile
 // as parameter
-void	ft_iv(char *map)
+t_tile	*ft_iv(char *path)
 {
 	char	*full_text;
 	t_tile	*ll_map;
 
-	ft_iv_map_extension(map);
-	full_text = ft_get_full_text(map);
+	ft_iv_map_extension(path);
+	full_text = ft_get_full_text(path);
 	ft_iv_map_components(full_text);
 	ft_iv_map_rectangular(full_text);
 	ft_iv_map_closed(full_text);
 	ll_map = ft_convert_str_to_ll(full_text);
 	free(full_text);
 	ft_iv_map_path(ll_map);
+	return (ll_map);
 }
 // TO CLEAN THE LL	
 	// t_tile	*save_tile;
