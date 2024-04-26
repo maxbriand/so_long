@@ -1,1 +1,0 @@
-// don't forget to free the string of imgs that I malloc

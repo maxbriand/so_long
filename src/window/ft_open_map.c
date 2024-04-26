@@ -9,8 +9,7 @@ void	ft_open_map(t_tile *ll_map)
 		ft_exit_error_message("Open window issue");
 	ft_display_map(ll_map, so_long);
 	mlx_key_hook(so_long->win_ptr, key_hook, so_long);
-	mlx_mouse_hook(so_long->win_ptr, mouse_hook, so_long);
-	mlx_hook(so_long->win_ptr, 17, 0, ft_close_window, so_long);
+	mlx_hook(so_long->win_ptr, 17, 0, ft_exit_success, so_long);
 	mlx_loop(so_long->mlx_ptr);	
 	// handle win_ptr fail?
 	// ft_close_window(); // free so_long window structure + destroy properly

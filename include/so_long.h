@@ -44,6 +44,7 @@ typedef struct	s_window
 	int		size_y;
 	int		pix_tile;
 	int		**imgs;
+	t_tile 	*ll_map;
 } t_window;
 
 #include "libft.h"
@@ -51,8 +52,13 @@ typedef struct	s_window
 #include <fcntl.h>
 #include <stdio.h>
 
+
+// Exit
+int			ft_exit_success(t_window *so_long);
+void		ft_exit_failure(char *message, t_window *so_long);
 void		ft_exit_error_message(char *message);
 void		ft_free_map_tile(t_tile *map);
+
 
 // Parsing .ber map file
 t_tile		*ft_parsing(char *path);
@@ -70,16 +76,16 @@ t_tile		*ft_find_tile(t_tile *tile, int x, int y);
 t_tile		*ft_find_starting_p(t_tile *tile);
 
 // window
+void		ft_open_map(t_tile *ll_map);
 t_window	*ft_open_window(t_tile *ll_map);
-int			ft_close_window(t_window *so_long);
+void		ft_close_window(t_window *so_long);
 
 // open map
 void		ft_display_map(t_tile *ll_map, t_window *sl);
 int			**ft_open_images(t_window *sl);
 
 // hook
-int		key_hook(int keycode, void *so_long);
-int		mouse_hook(int button, int x, int y, void *param);
+int			key_hook(int keycode, void *so_long);
 
 // game
 

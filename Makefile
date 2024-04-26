@@ -12,6 +12,7 @@ WINDOW = src/window/
 #MOVE = src/move/
 
 SRC = 	src/main.c \
+		src/exit.c \
 		\
 		$(PARSING)ft_parsing.c \
 		$(PARSING)ft_parsing_map_extension.c \
@@ -24,7 +25,6 @@ SRC = 	src/main.c \
 		$(PARSING)ft_ll_queue_utils.c \
 		\
 		$(HOOK)ft_key_hook.c \
-		$(HOOK)ft_mouse_hook.c \
 		\
 		$(MAP)ft_display_map.c \
 		$(MAP)ft_open_images.c \
