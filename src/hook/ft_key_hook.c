@@ -6,7 +6,8 @@ int	key_hook(int keycode, void *so_long)
 	if (keycode == 65307)
 		ft_exit_success(so_long);
 	// up
-	//if (keycode == 122)
+	// if (keycode == 122)
+	// 	ft_move_up(so_long);
 	// down
 	//if (keycode == 115)
 	// right

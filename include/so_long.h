@@ -44,6 +44,10 @@ typedef struct	s_window
 	int		size_y;
 	int		pix_tile;
 	int		**imgs;
+	int		x_pcoor;
+	int		y_pcoor;
+	int		x_ecoor;
+	int		y_ecoor;
 	t_tile 	*ll_map;
 } t_window;
 
@@ -51,7 +55,6 @@ typedef struct	s_window
 #include "mlx.h"
 #include <fcntl.h>
 #include <stdio.h>
-
 
 // Exit
 int			ft_exit_success(t_window *so_long);
@@ -83,6 +86,8 @@ void		ft_close_window(t_window *so_long);
 // open map
 void		ft_display_map(t_tile *ll_map, t_window *sl);
 void		ft_open_images(t_window *sl);
+void		save_init_pos(t_window *so_long);
+
 
 // hook
 int			key_hook(int keycode, void *so_long);

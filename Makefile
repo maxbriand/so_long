@@ -28,6 +28,7 @@ SRC = 	src/main.c \
 		\
 		$(MAP)ft_display_map.c \
 		$(MAP)ft_open_images.c \
+		$(MAP)ft_save_init_pos.c \
 		\
 		$(WINDOW)ft_close_window.c \
 		$(WINDOW)ft_open_window.c \
