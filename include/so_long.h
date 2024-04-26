@@ -82,12 +82,13 @@ void		ft_close_window(t_window *so_long);
 
 // open map
 void		ft_display_map(t_tile *ll_map, t_window *sl);
-int			**ft_open_images(t_window *sl);
+void		ft_open_images(t_window *sl);
 
 // hook
 int			key_hook(int keycode, void *so_long);
 
 // game
+
 
 // counter
 

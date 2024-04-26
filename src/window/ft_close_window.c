@@ -20,8 +20,12 @@ void	ft_close_images(t_window *so_long)
 
 void	ft_close_window(t_window *so_long)
 {
-	ft_close_images(so_long);
-	mlx_destroy_window(so_long->mlx_ptr, so_long->win_ptr);	
-	mlx_destroy_display(so_long->mlx_ptr);
+	if (so_long->imgs != NULL)
+		ft_close_images(so_long);
+	if (so_long->win_ptr != NULL)
+		mlx_destroy_window(so_long->mlx_ptr, so_long->win_ptr);	
+	if (so_long->mlx_ptr != NULL)
+		mlx_destroy_display(so_long->mlx_ptr);
+	free(so_long->mlx_ptr);
 	free(so_long);
 }

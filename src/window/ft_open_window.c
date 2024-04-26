@@ -25,7 +25,10 @@ t_window	*ft_open_window(t_tile *ll_map)
 
 	so_long = malloc(sizeof(t_window));
 	if (so_long == NULL)
-		return (NULL);
+	{
+		free (ll_map);
+		ft_exit_failure("Open window issue", NULL);
+	}
 	so_long->pix_tile = 50;
 	so_long->imgs = NULL;
 	so_long->ll_map = ll_map;
@@ -33,16 +36,10 @@ t_window	*ft_open_window(t_tile *ll_map)
 	so_long->size_y = ft_coor_max(ll_map, 1) * 50;
 	so_long->mlx_ptr = mlx_init();
 	if (so_long->mlx_ptr == NULL)
-	{
-		free(so_long);
-		return (NULL);
-	}
+		ft_exit_failure("Open window issue", so_long);
 	so_long->win_ptr = mlx_new_window(so_long->mlx_ptr, so_long->size_x, \
-	so_long->size_y, "so_long");
+		so_long->size_y, "so_long");
 	if (so_long->win_ptr == NULL)
-	{
-		free(so_long);
-		return (NULL);
-	}
+		ft_exit_failure("Open window issue", so_long);
 	return (so_long);
 }

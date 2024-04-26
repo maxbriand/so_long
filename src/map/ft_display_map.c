@@ -5,7 +5,7 @@ void	ft_display_map(t_tile *ll_map, t_window *sl)
 	int		x;
 	int		y;
 	
-	sl->imgs = ft_open_images(sl);
+	ft_open_images(sl);
 	while (ll_map)
 	{
 		x = ll_map->x * sl->pix_tile;

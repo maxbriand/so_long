@@ -4,10 +4,7 @@ int	key_hook(int keycode, void *so_long)
 {
 	// esc
 	if (keycode == 65307)
-	{
-		ft_close_window(so_long);
-		exit(EXIT_SUCCESS);
-	}
+		ft_exit_success(so_long);
 	// up
 	//if (keycode == 122)
 	// down
