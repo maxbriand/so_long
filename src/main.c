@@ -37,7 +37,7 @@ int	main(int ac, char **av)
 	if (ac > 1)
 		ft_exit_error_message("Too many arguments");
 	path = *av;
-	ll_map = ft_iv(path);
+	ll_map = ft_parsing(path);
 	ft_open_map(ll_map);
 	return (0);
 }

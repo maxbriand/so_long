@@ -5,20 +5,33 @@ SRC_DIR = ./src
 LIBFT = libft/libft.a
 MLX = -lmlx -lX11 -lXext
 
-IV = src/iv/
+PARSING = src/parsing/
+HOOK = src/hook/
+MAP = src/map/
+WINDOW = src/window/
+#MOVE = src/move/
 
 SRC = 	src/main.c \
-		src/ft_open_map.c \
 		\
-		$(IV)ft_iv.c \
-		$(IV)ft_iv_map_extension.c \
-		$(IV)ft_iv_map_components.c \
-		$(IV)ft_iv_map_rectangular.c \
-		$(IV)ft_iv_map_closed.c \
-		$(IV)ft_invalid_map_exit.c \
-		$(IV)ft_iv_map_path.c \
-		$(IV)ft_ll_tile_utils.c \
-		$(IV)ft_ll_queue_utils.c \
+		$(PARSING)ft_parsing.c \
+		$(PARSING)ft_parsing_map_extension.c \
+		$(PARSING)ft_parsing_map_components.c \
+		$(PARSING)ft_parsing_map_rectangular.c \
+		$(PARSING)ft_parsing_map_closed.c \
+		$(PARSING)ft_parsing_map_path.c \
+		$(PARSING)ft_invalid_map_exit.c \
+		$(PARSING)ft_ll_tile_utils.c \
+		$(PARSING)ft_ll_queue_utils.c \
+		\
+		$(HOOK)ft_key_hook.c \
+		$(HOOK)ft_mouse_hook.c \
+		\
+		$(MAP)ft_display_map.c \
+		$(MAP)ft_open_images.c \
+		\
+		$(WINDOW)ft_close_window.c \
+		$(WINDOW)ft_open_window.c \
+		$(WINDOW)ft_open_map.c \
 
 OBJ = $(patsubst %.c, %.o, $(SRC))
 
