@@ -9,7 +9,7 @@ PARSING = src/parsing/
 HOOK = src/hook/
 MAP = src/map/
 WINDOW = src/window/
-#MOVE = src/move/
+GAME = src/game/
 
 SRC = 	src/main.c \
 		src/exit.c \
@@ -33,6 +33,10 @@ SRC = 	src/main.c \
 		$(WINDOW)ft_close_window.c \
 		$(WINDOW)ft_open_window.c \
 		$(WINDOW)ft_open_map.c \
+		\
+		$(GAME)ft_move.c \
+		$(GAME)ft_get_next_c.c \
+		$(GAME)ft_game_end.c \
 
 OBJ = $(patsubst %.c, %.o, $(SRC))
 

@@ -48,6 +48,7 @@ typedef struct	s_window
 	int		y_pcoor;
 	int		x_ecoor;
 	int		y_ecoor;
+	int		end;
 	t_tile 	*ll_map;
 } t_window;
 
@@ -61,7 +62,6 @@ int			ft_exit_success(t_window *so_long);
 void		ft_exit_failure(char *message, t_window *so_long);
 void		ft_exit_error_message(char *message);
 void		ft_free_map_tile(t_tile *map);
-
 
 // Parsing .ber map file
 t_tile		*ft_parsing(char *path);
@@ -93,7 +93,9 @@ void		save_init_pos(t_window *so_long);
 int			key_hook(int keycode, void *so_long);
 
 // game
-
+void		ft_move(t_window *sl, int x_move, int y_move);
+char		ft_get_next_c(t_window *sl, int	x_move, int y_move);
+void 		ft_game_end(t_window *sl);
 
 // counter
 

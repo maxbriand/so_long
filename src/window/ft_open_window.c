@@ -31,6 +31,7 @@ t_window	*ft_open_window(t_tile *ll_map)
 	}
 	so_long->pix_tile = 50;
 	so_long->imgs = NULL;
+	so_long->end = 0;
 	so_long->ll_map = ll_map;
 	so_long->size_x = ft_coor_max(ll_map, 0) * 50;
 	so_long->size_y = ft_coor_max(ll_map, 1) * 50;
