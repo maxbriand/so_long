@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   exit.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/27 17:26:11 by mbriand           #+#    #+#             */
+/*   Updated: 2024/04/27 17:26:36 by mbriand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	ft_free_map_tile(t_tile *map)
@@ -27,7 +39,7 @@ void	ft_exit_error_message(char *message)
 void	ft_exit_failure(char *message, t_window *so_long)
 {
 	if (so_long->ll_map != NULL && so_long != NULL)
-		ft_free_map_tile(so_long->ll_map);	
+		ft_free_map_tile(so_long->ll_map);
 	if (so_long != NULL)
 		ft_close_window(so_long);
 	ft_exit_error_message(message);
@@ -35,9 +47,8 @@ void	ft_exit_failure(char *message, t_window *so_long)
 
 int	ft_exit_success(t_window *so_long)
 {
-	ft_free_map_tile(so_long->ll_map);	
+	ft_free_map_tile(so_long->ll_map);
 	ft_close_window(so_long);
 	exit(EXIT_SUCCESS);
 	return (0);
 }
-

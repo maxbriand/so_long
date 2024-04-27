@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_open_window.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/27 17:30:09 by mbriand           #+#    #+#             */
+/*   Updated: 2024/04/27 17:30:10 by mbriand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static int	ft_coor_max(t_tile *ll_map, int x_or_y)
 {
-	int coor_max;
+	int	coor_max;
 
 	coor_max = 0;
 	while (x_or_y == 0 && ll_map->next->y == 0)
@@ -31,6 +43,7 @@ t_window	*ft_open_window(t_tile *ll_map)
 	}
 	so_long->pix_tile = 50;
 	so_long->imgs = NULL;
+	so_long->counter = 0;
 	so_long->end = 0;
 	so_long->ll_map = ll_map;
 	so_long->size_x = ft_coor_max(ll_map, 0) * 50;
