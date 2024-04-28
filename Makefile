@@ -16,6 +16,7 @@ SRC = 	src/main.c \
 		\
 		$(PARSING)ft_parsing.c \
 		$(PARSING)ft_parsing_map_extension.c \
+		$(PARSING)ft_parsing_lenght.c \
 		$(PARSING)ft_parsing_map_components.c \
 		$(PARSING)ft_parsing_map_rectangular.c \
 		$(PARSING)ft_parsing_map_closed.c \
@@ -58,7 +59,6 @@ clean:
 fclean: clean
 	@rm -f test
 	@rm -f $(NAME)
-	@make clean -C libft
+	@make fclean -C libft
 
-re:
-	@make
+re: fclean all

@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:34:38 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/27 17:34:39 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/28 01:20:22 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ static void	ft_invalid_character(char *full_text)
 	char	*save_full_text;
 
 	save_full_text = full_text;
+	if (save_full_text == NULL)
+		ft_invalid_map_exit(NULL, save_full_text, 1);
 	while (*full_text)
 	{
 		if (*(full_text) != EMPTY_SPACE && *(full_text) != WALL \

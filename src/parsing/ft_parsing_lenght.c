@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_save_init_pos.c                                 :+:      :+:    :+:   */
+/*   ft_parsing_lenght.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 17:37:36 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/27 17:47:49 by mbriand          ###   ########.fr       */
+/*   Created: 2024/04/28 16:10:31 by mbriand           #+#    #+#             */
+/*   Updated: 2024/04/28 16:24:21 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_save_init_pos(t_window *so_long)
+void	ft_parsing_lenght(char *full_text)
 {
-	t_tile	*ll_map;
+	int	i;
 
-	ll_map = so_long->ll_map;
-	while (ll_map)
+	i = 0;
+	while (full_text[i])
 	{
-		if (ll_map->c == 'E')
-		{
-			so_long->x_ecoor = (ll_map->x);
-			so_long->y_ecoor = (ll_map->y);
-		}
-		else if (ll_map->c == 'P')
-		{
-			so_long->x_pcoor = (ll_map->x);
-			so_long->y_pcoor = (ll_map->y);
-		}
-		ll_map = ll_map->next;
+		if (full_text[i] == '\n')
+			break ;
+		i++;
 	}
+	if (i > 100)
+		ft_invalid_map_exit(NULL, full_text, 4);
 }

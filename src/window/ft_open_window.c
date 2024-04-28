@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:30:09 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/27 17:30:10 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/28 01:55:20 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_window	*ft_open_window(t_tile *ll_map)
 	so_long = malloc(sizeof(t_window));
 	if (so_long == NULL)
 	{
-		free (ll_map);
+		ft_free_map_tile(ll_map);
 		ft_exit_failure("Open window issue", NULL);
 	}
 	so_long->pix_tile = 50;

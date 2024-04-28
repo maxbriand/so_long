@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 23:02:45 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/23 23:16:32 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/28 16:12:14 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ void	ft_invalid_map_exit(char *components, char *full_text, int code)
 		free(components);
 		ft_exit_error_message("Map contain two E or P");
 	}
+	if (code == 4)
+		ft_exit_error_message("Map lenght is too big");
 }

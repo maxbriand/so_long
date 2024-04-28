@@ -6,20 +6,26 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:34:22 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/27 17:34:23 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/28 01:35:37 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+static void	ft_malloc_error(char *text)
+{
+	free(text);
+	exit(EXIT_FAILURE);
+}
+
 //Create an element of the list
-t_tile	*ft_create_tile(int x, int y, char c)
+t_tile	*ft_create_tile(int x, int y, char c, char *text)
 {
 	t_tile	*pt_new_elem;
 
 	pt_new_elem = malloc(sizeof(t_tile));
 	if (pt_new_elem == 0)
-		return (NULL);
+		ft_malloc_error(text);
 	pt_new_elem->next = NULL;
 	pt_new_elem->x = x;
 	pt_new_elem->y = y;
@@ -35,7 +41,7 @@ void	ft_tile_push_back(t_tile **begin_list, int x, int y, char c)
 	t_tile	*deref_begin_list;
 
 	deref_begin_list = *begin_list;
-	new_node = ft_create_tile(x, y, c);
+	new_node = ft_create_tile(x, y, c, NULL);
 	while (deref_begin_list->next != NULL)
 		deref_begin_list = deref_begin_list->next;
 	deref_begin_list->next = new_node;
@@ -52,7 +58,6 @@ t_tile	*ft_find_tile(t_tile *tile, int x, int y)
 	return (tile);
 }
 
-// don't forget to free the queue
 t_tile	*ft_find_starting_p(t_tile *tile)
 {
 	while (tile)

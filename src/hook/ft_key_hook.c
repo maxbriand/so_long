@@ -6,13 +6,13 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:33:59 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/27 17:34:00 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:45:37 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	key_hook(int keycode, void *so_long)
+int	ft_key_hook(int keycode, void *so_long)
 {
 	if (keycode == 65307)
 		ft_exit_success(so_long);

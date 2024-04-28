@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:26:11 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/27 17:26:36 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/28 16:23:46 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,12 @@ void	ft_exit_error_message(char *message)
 
 void	ft_exit_failure(char *message, t_window *so_long)
 {
-	if (so_long->ll_map != NULL && so_long != NULL)
-		ft_free_map_tile(so_long->ll_map);
 	if (so_long != NULL)
+	{
+		if (so_long->ll_map != NULL)
+			ft_free_map_tile(so_long->ll_map);
 		ft_close_window(so_long);
+	}
 	ft_exit_error_message(message);
 }
 
